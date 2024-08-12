@@ -22,10 +22,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build --project ".\UmbracoNextJsDemo.Site\"
+        run: dotnet build ".\UmbracoNextJsDemo.Site\"
 
       - name: dotnet publish
-        run: dotnet publish --project ".\UmbracoNextJsDemo.Site\" -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -o ${{env.DOTNET_ROOT}}/myapp ".\UmbracoNextJsDemo.Site\"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
